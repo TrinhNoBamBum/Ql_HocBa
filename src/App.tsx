@@ -1,12 +1,25 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
+import { RouteConfig } from 'components/config';
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      Demo
-    </div>
+    <Router>
+      <div className="main">
+        <Switch>
+          {
+            RouteConfig.map(route => (
+              <Route key={route.path} path={'/' + route.path}>
+                <route.component />
+              </Route>
+            ))
+          }
+        </Switch>
+      </div>
+    </Router>
   );
 }
-
-export default App;

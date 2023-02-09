@@ -1,0 +1,12 @@
+.dropdown-custom {
+  &.disable {
+    // dropdown-custom.disable
+  }
+
+  .class-2 {
+    // dropdown-custom class-2
+    .class-3 {
+      // dropdown-custom class-2 class-3
+    }
+  }
+}
