@@ -10,7 +10,7 @@ export const Routes = {
   BLOG:'blog',
   CONTACT:'contact',
   BLOGDETAIL:'blogdetail',
-  PRODUCT_DETAIL: 'product-detail/:productId',
+  PRODUCT_DETAIL: 'product-detail/ :productId',  //product-detail/ :productId
   MAIN:'',
   BODY:''
 }
@@ -26,6 +26,7 @@ const Contact=lazy(()=>import(/* webpackChunkName: "Categories" */'components/Co
 const BlogDetail =lazy(()=>import(/* webpackChunkName: "Categories" */'components/BlogDetail'));
 
 const Cart = lazy(()=>import(/* webpackChunkName: "Categories" */ 'components/CartFashion'))
+
 
 
 
@@ -52,7 +53,7 @@ export const MainRoute = [
   {
     path: Routes.PRODUCT_DETAIL,
     component: ProductDetail,
-    extra: true
+    
   },
   {
     path:Routes.BLOG,
@@ -77,6 +78,11 @@ export const MainRoute = [
   {
     path:Routes.CART,
     component:Cart,
+    extra:true
+  },
+  {
+    path:Routes.PRODUCT_DETAIL,
+    component:ProductDetail,
     extra:true
   }
 

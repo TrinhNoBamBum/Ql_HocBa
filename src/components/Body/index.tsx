@@ -1,6 +1,37 @@
-import React from "react"
+import React, { useEffect } from "react";
+import { useState } from "react";
+import SingleProduct from "components/SingleProduct";
+import SingleBlog from "components/SingleBlog";
+
+// const [product, setProduct] = useState<Record<string, unknown>[]>([]);
+
 const Body = () => {
+    const [product, setProduct] = useState<Record<string, unknown>[]>([]);
+    const [blog, setBlog] = useState<Record<string, unknown>[]>([]);
+
+
+    //lấy danh sách sản phẩm 
+    useEffect(() => {
+        fetch('http://localhost:8888/getProduct')
+            .then((res) => res.json())
+            .then((data) => setProduct(data))
+            .catch(function (error) {
+                console.log(error);
+            });
+    }, [])
+
+    useEffect(() => {
+        fetch('http://localhost:8888/getBlog')
+            .then((res) => res.json())
+            .then((data) => setBlog(data))
+            .catch(function (err) {
+                console.log(err)
+            })
+
+    })
+
     return (
+
         <div>
             <div className="slider_area slider_style home_three_slider owl-carousel">
                 <div className="single_slider" data-bgimg="assets/img/slider/slider4.jpg">
@@ -16,6 +47,7 @@ const Body = () => {
                         </div>
                     </div>
                 </div>
+
                 <div className="single_slider" data-bgimg="assets/img/slider/slider5.jpg">
                     <div className="container">
                         <div className="row align-items-center">
@@ -46,6 +78,7 @@ const Body = () => {
             {/* <!--slider area end-->
 
     <!--banner area start--> */}
+
             <div className="banner_section banner_section_three">
                 <div className="container-fluid">
                     <div className="row ">
@@ -111,28 +144,7 @@ const Body = () => {
                             <div className="tab-pane fade show active" id="clothing" role="tabpanel">
                                 <div className="product_container">
                                     <div className="row product_column4">
-                                        <div className="col-lg-3">
-                                            <div className="single_product">
-                                                <div className="product_thumb">
-                                                    <a className="primary_img" href="product-details.html"><img src="assets/img/product/product21.jpg" alt="" /></a>
-                                                    <a className="secondary_img" href="product-details.html"><img src="assets/img/product/product22.jpg" alt="" /></a>
 
-                                                    <div className="quick_button">
-                                                        <a href="#" title="quick_view">Xem sản phẩm</a>
-
-                                                    </div>
-
-                                                    <div className="product_sale">
-                                                        <span>-7%</span>
-                                                    </div>
-                                                </div>
-                                                <div className="product_content">
-                                                    <h3><a href="product-details.html">Marshall Portable  Bluetooth</a></h3>
-                                                    <span className="current_price">£60.00</span>
-                                                    <span className="old_price">£86.00</span>
-                                                </div>
-                                            </div>
-                                        </div>
                                         <div className="col-lg-3">
                                             <div className="single_product">
                                                 <div className="product_thumb">
@@ -958,139 +970,31 @@ const Body = () => {
                         </div>
                     </div>
                     <div className="product_area">
-                       
+
                         <div className="row">
-                        {/* product_carousel product_three_column4 owl-carousel */}
-                           
-                                <div className="col-lg-3">
-                                    <div className="single_product">
-                                        <div className="product_thumb">
-                                            <a className="primary_img" href="product-details.html"><img src="assets/img/product/product21.jpg" alt="xin chao" /></a>
-                                            <a className="secondary_img" href="product-details.html"><img src="assets/img/product/product22.jpg" alt="" /></a>
+                            {/* product_carousel product_three_column4 owl-carousel */}
 
-                                            <div className="quick_button">
-                                                <a href="#" title="quick_view">Xem sản phẩm</a>
-                                            </div>
 
-                                            <div className="product_sale">
-                                                <span>-7%</span>
-                                            </div>
-                                        </div>
-                                        <div className="product_content">
-                                            <h3><a href="product-details.html">Marshall Portable  Bluetooth</a></h3>
-                                            <span className="current_price">£60.00</span>
-                                            <span className="old_price">£86.00</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="col-lg-3">
-                                    <div className="single_product">
-                                        <div className="product_thumb">
-                                            <a className="primary_img" href="product-details.html"><img src="assets/img/product/product27.jpg" alt="" /></a>
-                                            <a className="secondary_img" href="product-details.html"><img src="assets/img/product/product28.jpg" alt="" /></a>
+                            {/* Single */}
+                            {product.map((item, index) => (
+                                <SingleProduct
+                                    key={index}
+                                    objectProduct={item}
+                                ></SingleProduct>
+                            ))}
 
-                                            <div className="quick_button">
-                                                <a href="#" title="quick_view">Xem sản phẩm</a>
-                                            </div>
-                                        </div>
-                                        <div className="product_content">
-                                            <h3><a href="product-details.html">Koss KPH7 Portable</a></h3>
-                                            <span className="current_price">£60.00</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="col-lg-3">
-                                    <div className="single_product">
-                                        <div className="product_thumb">
-                                            <a className="primary_img" href="product-details.html"><img src="assets/img/product/product6.jpg" alt="" /></a>
-                                            <a className="secondary_img" href="product-details.html"><img src="assets/img/product/product5.jpg" alt="" /></a>
 
-                                            <div className="quick_button">
-                                                <a href="#" title="quick_view">Xem sản phẩm</a>
-                                            </div>
 
-                                        </div>
-                                        <div className="product_content">
-                                            <h3><a href="product-details.html">Beats Solo2 Solo 2</a></h3>
-                                            <span className="current_price">£60.00</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="col-lg-3">
-                                    <div className="single_product">
-                                        <div className="product_thumb">
-                                            <a className="primary_img" href="product-details.html"><img src="assets/img/product/product7.jpg" alt="" /></a>
-                                            <a className="secondary_img" href="product-details.html"><img src="assets/img/product/product8.jpg" alt="" /></a>
 
-                                            <div className="quick_button">
-                                                <a href="#" title="quick_view">Xem sản phẩm</a>
-                                            </div>
 
-                                            <div className="product_sale">
-                                                <span>-7%</span>
-                                            </div>
-                                        </div>
-                                        <div className="product_content">
-                                            <h3><a href="product-details.html">Beats EP Wired</a></h3>
-                                            <span className="current_price">£60.00</span>
-                                            <span className="old_price">£86.00</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="col-lg-3">
-                                    <div className="single_product">
-                                        <div className="product_thumb">
-                                            <a className="primary_img" href="product-details.html"><img src="assets/img/product/product24.jpg" alt="" /></a>
-                                            <a className="secondary_img" href="product-details.html"><img src="assets/img/product/product25.jpg" alt="" /></a>
 
-                                            <div className="quick_button">
-                                                <a href="#" title="quick_view">Xem sản phẩm</a>
-                                            </div>
-                                        </div>
-                                        <div className="product_content">
-                                            <h3><a href="product-details.html">Bose SoundLink Bluetooth</a></h3>
-                                            <span className="current_price">£60.00</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="col-lg-3">
-                                    <div className="single_product">
-                                        <div className="product_thumb">
-                                            <a className="primary_img" href="product-details.html"><img src="assets/img/product/product10.jpg" alt="" /></a>
-                                            <a className="secondary_img" href="product-details.html"><img src="assets/img/product/product11.jpg" alt="" /></a>
+                            {/* endSingle */}
 
-                                            <div className="quick_button">
-                                                <a href="#" title="quick_view">Xem sản phẩm</a>
-                                            </div>
 
-                                            <div className="product_sale">
-                                                <span>-7%</span>
-                                            </div>
-                                        </div>
-                                        <div className="product_content">
-                                            <h3><a href="product-details.html">Apple iPhone SE 16GB</a></h3>
-                                            <span className="current_price">£60.00</span>
-                                            <span className="old_price">£86.00</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="col-lg-3">
-                                    <div className="single_product">
-                                        <div className="product_thumb">
-                                            <a className="primary_img" href="product-details.html"><img src="assets/img/product/product23.jpg" alt="" /></a>
-                                            <a className="secondary_img" href="product-details.html"><img src="assets/img/product/product24.jpg" alt="" /></a>
 
-                                            <div className="quick_button">
-                                                <a href="#" title="quick_view">Xem sản phẩm</a>
-                                            </div>
-                                        </div>
-                                        <div className="product_content">
-                                            <h3><a href="product-details.html">JBL Flip 3 Portable</a></h3>
-                                            <span className="current_price">£60.00</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            
+
+
+
                         </div>
                     </div>
 
@@ -1110,81 +1014,17 @@ const Body = () => {
                         </div>
                     </div>
                     <div className="row">
-                     
-                            <div className="col-lg-4">
-                                <div className="single_blog">
-                                    <div className="blog_thumb">
-                                        <a href="blog-details.html"><img src="assets/img/blog/blog1.jpg" alt="" /></a>
-                                        <div className="blog_icon">
-                                            <a href="blog-details.html"></a>
-                                        </div>
-                                    </div>
-                                    <div className="blog_content">
-                                        <h3><a href="blog-details.html">Mercedes Benz Mirror To The Soul 360</a></h3>
-                                        <div className="author_name">
-                                            <p>
-                                                <span className="post_by">by</span>
-                                                <span className="themes">ecommerce Themes</span>
-                                                / 30 Oct 2017
-                                            </p>
 
-                                        </div>
-                                        <div className="post_desc">
-                                            <p>Maria Denardo is the Fashion Director at theFashionSpot. Prior to joining tFS, she worked as...</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-lg-4">
-                                <div className="single_blog">
-                                    <div className="blog_thumb">
-                                        <a href="blog-details.html"><img src="assets/img/blog/blog2.jpg" alt="" /></a>
-                                        <div className="blog_icon">
-                                            <a href="blog-details.html"></a>
-                                        </div>
-                                    </div>
-                                    <div className="blog_content">
-                                        <h3><a href="blog-details.html">Dior F/W 2015 First Fashion Experience</a></h3>
-                                        <div className="author_name">
-                                            <p>
-                                                <span className="post_by">by</span>
-                                                <span className="themes">ecommerce Themes</span>
-                                                / 30 Oct 2017
-                                            </p>
 
-                                        </div>
-                                        <div className="post_desc">
-                                            <p>Maria Denardo is the Fashion Director at theFashionSpot. Prior to joining tFS, she worked as...</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-lg-4">
-                                <div className="single_blog">
-                                    <div className="blog_thumb">
-                                        <a href="blog-details.html"><img src="assets/img/blog/blog3.jpg" alt="" /></a>
-                                        <div className="blog_icon">
-                                            <a href="blog-details.html"></a>
-                                        </div>
-                                    </div>
-                                    <div className="blog_content">
-                                        <h3><a href="blog-details.html">London Fashion Week & Royal Day</a></h3>
-                                        <div className="author_name">
-                                            <p>
-                                                <span className="post_by">by</span>
-                                                <span className="themes">ecommerce Themes</span>
-                                                / 30 Oct 2017
-                                            </p>
+                        
+                            {blog.map((item, index) =>(
+                                <SingleBlog
+                                    key={index}
+                                    dataBlog={item}
+                                >
+                                </SingleBlog>
 
-                                        </div>
-                                        <div className="post_desc">
-                                            <p>Maria Denardo is the Fashion Director at theFashionSpot. Prior to joining tFS, she worked as...</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                           
-                       
+                            ))}
                     </div>
                 </div>
             </section>
@@ -1310,6 +1150,9 @@ const Body = () => {
                 </div>
             </div>
             {/* <!-- modal area start--> */}
+
+
+
         </div>
     )
 }

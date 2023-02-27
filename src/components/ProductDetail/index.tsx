@@ -1,20 +1,40 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { useEffect } from 'react';
 import './style.scss';
 
 
 const ProductDetail = () => {
   const params = useParams<Record<string, string>>();
+
+//   const [product, setProduct] = useState<Record<string, unknown>[]>([]);
+//   useEffect(()=>{
+
+//     if(params.Id){
+//         fetch(`http://localhost:8888/FindProduct/${params.Id}`)
+//         .then((res) => res.json())
+//         .then((data) => setProduct(data))
+//         .catch(function (error) {
+//             console.log(error);
+//         });
+//     }
+
+//   },[params.Id])
+  console.log("==========================")
+  console.log(params)
+  console.log("============================")
   return (
     <div>  
        {/* <!--breadcrumbs area start--> */}
+   
+    
     <div className="breadcrumbs_area product_bread">
         <div className="container">   
             <div className="row">
                 <div className="col-12">
                     <div className="breadcrumb_content">
                         <ul>
-                            <li><a href="index.html">home</a></li>
+                            <li><a href="index.html">homeeeeeeeeeee</a></li>
                             <li>/</li>
                             <li>product details</li>
                         </ul>
