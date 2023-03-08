@@ -1,6 +1,12 @@
 import { Routes } from "components/config";
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 function SingleProduct(_props: any) {
+
+
+
+
+
 
     return (
 
@@ -12,7 +18,7 @@ function SingleProduct(_props: any) {
                         <a className="secondary_img" href="product-details.html"><img src="assets/img/product/product22.jpg" alt="" /></a>
 
                         <div className="quick_button">
-                            <a href="/product-detail/8" title="quick_view">Xem sản phẩm</a>
+                            <a href={`/${Routes.PRODUCT_DETAIL}?Id=${_props.objectProduct.Id}`} title="quick_view">Xem sản phẩm</a>
                         </div>
 
                         <div className="product_sale">

@@ -19,7 +19,6 @@ const Body = () => {
                 console.log(error);
             });
     }, [])
-
     useEffect(() => {
         fetch('http://localhost:8888/getBlog')
             .then((res) => res.json())
@@ -47,7 +46,6 @@ const Body = () => {
                         </div>
                     </div>
                 </div>
-
                 <div className="single_slider" data-bgimg="assets/img/slider/slider5.jpg">
                     <div className="container">
                         <div className="row align-items-center">

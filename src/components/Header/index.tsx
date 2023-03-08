@@ -1,13 +1,25 @@
 import React from 'react';
-import { Link, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './style.scss';
 import { RouteConfig } from 'components/config';
+import { useSelector } from 'react-redux';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+  } from "react-router-dom";
 
 
 const Header = () => {
+
+    const counter = useSelector((state:any) => state.countCart);
+    const ID = useSelector((state:any) => state.getId);
   return (
+
+
+
     <div>
-   
+   <h1>{ID}</h1>
     <div className="off_canvars_overlay">
                 
     </div>
@@ -80,7 +92,7 @@ const Header = () => {
 
                             </div>
                             <div className="cart_link">
-                                <a href="#"><i className="fa fa-shopping-basket"></i>2 item(s)</a>
+                                <a href="#"><i className="fa fa-shopping-basket"></i>3 item(s)</a>
                               
                                  <div className="mini_cart">
                                     <div className="cart_item top">
@@ -269,7 +281,7 @@ const Header = () => {
             </div>
         </div>
         {/* <!--header top start-->
-
+          Lap Toppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp
         <!--header middel start--> */}
         <div className="header_middel">
             <div className="container-fluid">
@@ -291,7 +303,7 @@ const Header = () => {
                         <div className="col-lg-4">
                             <div className="cart_area">
                                 <div className="cart_link">
-                                    <a href="#"><i className="fa fa-shopping-basket"></i>2 item(s)</a>
+                                    <a href="#"><i className="fa fa-shopping-basket"></i>{counter} items</a>
                                     {/* <!--mini cart--> */}
                                      <div className="mini_cart">
                                         <div className="cart_item top">
@@ -468,9 +480,12 @@ const Header = () => {
                                         <li className="active"><a href="./">Home </a></li>
                                       
                                       
-                                        <li><a href="./login">Login</a>
+                                        {/* <li><a href="./login">Login</a>
                                          
-                                        </li>
+                                        </li> */}
+                                        
+                                        <Link to='/login'>login</Link>
+                                        
                                         <li><a href="./blog">blog</a></li>
                                         
                                         <li><a href="./contact">Contact Us</a></li>

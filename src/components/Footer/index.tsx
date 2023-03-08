@@ -1,11 +1,26 @@
 import React from 'react';
 import './style.scss';
+import { useSelector, useDispatch } from "react-redux";
+import { decrement, increment } from 'store/actions/counter';
 
 const Footer = () => {
+    const counter = useSelector((state:any) => state.counter);
+    const dispatch = useDispatch();
+   
+
+ 
+        
   return (
     <div>
         {/* <!--footer area start--> */}
     <footer className="footer_widgets">
+
+
+    <div>
+      <h1>Counter {counter}</h1>
+      <button onClick={() => dispatch(increment(5))}>Increment</button>
+      <button onClick={() => dispatch(decrement(5))}>Decrement</button>
+    </div>
 
         <div className="footer_top">
             <div className="container">
@@ -113,3 +128,5 @@ const Footer = () => {
 }
 
 export default Footer;
+
+

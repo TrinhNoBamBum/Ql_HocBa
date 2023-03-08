@@ -1,7 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from 'react-redux';
+import { Countitem, GetIdProduct } from "store/actions/counter";
+
 const CartFashion=()=>{
+   const ID = useSelector((state:any)=> state.getId);
+const [cart, SetCart]=useState<Record<string, unknown>[]>([]);
+const countItem=cart.length;
+ 
+   useEffect(() => {   
+    fetch('http://localhost:8888/GetCart')
+        .then((res) => res.json())
+        .then((data ) => {
+            SetCart(data)   
+        })
+        .catch(function (error) {
+            console.log(error);
+        });  
+        
+},[])  
     return(
-        <div>
+        <div>  
               <div className="breadcrumbs_area other_bread">
         <div className="container">   
             <div className="row">
@@ -39,32 +57,28 @@ const CartFashion=()=>{
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                           <td className="product_remove"><a href="#"><i className="fa fa-trash-o"></i></a></td>
-                                            <td className="product_thumb"><a href="#"><img src="assets/img/s-product/product.jpg" alt=""/></a></td>
-                                            <td className="product_name"><a href="#">Handbag fringilla</a></td>
-                                            <td className="product-price">£65.00</td>
-                                            <td className="product_quantity"><input min="1" max="100" value="1" type="number"/></td>
-                                            <td className="product_total">£130.00</td>
-                                        </tr>
-                                        <tr>
-                                           <td className="product_remove"><a href="#"><i className="fa fa-trash-o"></i></a></td>
-                                            <td className="product_thumb"><a href="#"><img src="assets/img/s-product/product2.jpg" alt=""/></a></td>
-                                            <td className="product_name"><a href="#">Handbags justo</a></td>
-                                            <td className="product-price">£90.00</td>
-                                            <td className="product_quantity"><input min="1" max="100" value="1" type="number"/></td>
-                                            <td className="product_total">£180.00</td>
+                                    {cart.map((item, index) => (     
+                               <><tr>
+                                
+                                            <td className="product_remove"><a href="#"><i className="fa fa-trash-o"></i></a></td>
+                                            <td className="product_thumb"><a href="#"><img src="assets/img/s-product/product2.jpg" alt="" /></a></td>
+                                            <td className="product_name"><a href="#">{" " && String(item.Title)}</a></td>
+                                            <td className="product-price">{" " && String(item.Price)}</td>
+                                            <td className="product_quantity"><input min="1" max="100" value={" " && String(item.Quantity)} type="number" /></td>
+                                            <td className="product_total">{Number(item.Quantity)*Number(item.Price)}</td>
+                                        </tr></>
 
 
-                                        </tr>
-                                        <tr>
-                                           <td className="product_remove"><a href="#"><i className="fa fa-trash-o"></i></a></td>
-                                            <td className="product_thumb"><a href="#"><img src="assets/img/s-product/product3.jpg" alt=""/></a></td>
-                                            <td className="product_name"><a href="#">Handbag elit</a></td>
-                                            <td className="product-price">£80.00</td>
-                                            <td className="product_quantity"><input min="1" max="100" value="1" type="number"/></td>
-                                            <td className="product_total">£160.00</td>
-                                        </tr>
+
+
+                               
+                            ))}
+
+
+
+
+                                       
+                                       
                                     </tbody>
                                 </table>   
                             </div>  
@@ -125,3 +139,5 @@ const CartFashion=()=>{
     )
 }
 export default CartFashion;
+
+
