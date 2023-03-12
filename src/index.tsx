@@ -10,15 +10,13 @@ import { createStore } from 'redux';
 
 const container = document.getElementById('root')!;
 const root = createRoot(container);
-const store=createStore(allReducer)
+const store = createStore(allReducer)
 
 
 root.render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <App />
-    </Provider>
-  </React.StrictMode>
+  <Provider store={store}>
+    <App />
+  </Provider>
 );
 
 

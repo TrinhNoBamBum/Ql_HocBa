@@ -12,8 +12,8 @@ export const Routes = {
   CONTACT: 'contact',
   BLOGDETAIL: 'blogdetail',
   PRODUCT_DETAIL: 'product-detail',
-  MAIN: '',//product-detail/ :productId
-  BODY: ''
+  MAIN: '/:module',//product-detail/ :productId
+  BODY: 'home'
 }
 
 const Login = lazy(() => import(/* webpackChunkName: "Login" */ 'components/Login-Register'));
