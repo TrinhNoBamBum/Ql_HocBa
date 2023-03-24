@@ -1,0 +1,43 @@
+.detailClass {
+    .ResultStudent{
+        margin: 20px 0;
+        text-align: center;
+        h5{
+            margin: 20px 0;
+
+        }
+        table{
+            box-shadow: 2px 2px 2px 2px #AADEC4;
+        }
+
+    }
+
+    .PointSubject {
+        text-align: center;
+        thead{
+            background: #20B486;
+        }
+
+    }
+
+    .Note{
+        .textNote{
+
+            textarea{
+                border: none;
+                box-shadow: 2px 2px 2px 2px #6c757d;
+                border-radius: 5px ;
+            }
+        }
+        .titleNote{
+            i{
+                color: #20B486;
+                margin-right: 3px;
+            }
+            span{
+                font-weight: bold;
+            }
+        }
+
+    }
+}

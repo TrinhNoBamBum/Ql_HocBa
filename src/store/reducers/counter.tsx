@@ -1,4 +1,4 @@
-export const counterReducer = (state = 0, action:any) => {
+export const counterReducer = (state = 10, action:any) => {
     switch (action.type) {
       case "INCREMENT":
         return state + action.payload;

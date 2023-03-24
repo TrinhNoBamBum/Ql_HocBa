@@ -1,0 +1,50 @@
+.logo{
+    width: 100px;
+}
+.Login {
+ 
+    .login-row{
+        .login-Content{
+            text-align: center;
+            
+        }
+
+    }
+}
+
+.form-Input{
+    .login-pass{
+        background: #224957;
+        border: none;
+        border-radius: 6px;
+        padding:5px 10px ;
+        width: 250px;
+        height: 40px;
+        color: #fff;
+    }
+    .checkbox {
+        margin-top: 20px;
+        input{
+            background: #224957;
+            
+            font-size: 10px;
+            margin-right: 10px;
+            
+        }
+        .lable-checkbox{
+            margin-right: 45px;
+            margin-bottom: 20px;
+
+        }
+        
+    }
+    .btn-login{
+        
+        border: none;
+        padding: 10px 110px;
+        border-radius: 15px;
+        background: #20DF7F;
+
+    }
+
+}

@@ -1,6 +1,9 @@
 .navbar {
     background-color: #ffff;
     display: flex;
+    height: 80px;
+    padding: 10px;
+    border-bottom: 1px solid #f1f1f1;
    
 
     .div-Search{
@@ -23,7 +26,7 @@
     
     .NameSchool{
         padding: 5px;
-        margin: 0 400px 0 20px;
+        margin: 0 200px 0 20px;
         
         p{
             margin-bottom: 0;
@@ -33,4 +36,3 @@
         }
     }
 }
-

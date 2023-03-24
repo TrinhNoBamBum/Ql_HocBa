@@ -1,0 +1,21 @@
+#sidebarMenu{
+    margin-top: 15px;
+    .sidebar-sticky{
+        .nav{
+            .nav-item{
+                
+                margin: 10px 20px 10px 40px;
+                padding: 15px;
+                border: 1px solid #f0f0f0 ;
+                border-radius: 10px;
+
+                background: #fff;         
+                i{
+                    margin-right:10px ;
+                    font-size: 20px;
+
+                } 
+            }
+        }
+    }
+}

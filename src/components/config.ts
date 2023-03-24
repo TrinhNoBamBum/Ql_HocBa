@@ -1,32 +1,50 @@
 
+
 import path from 'path';
 import { Component, lazy } from 'react'
 import { Route } from 'react-router-dom';
 
 export const Routes = {
+  //admin 
+  ADMIN:'admin',
+  ADMINTEACHER:'',
+  ADMINSTUDENT:'student',
+
+
+  //student
+  STUDENTMAIN:'',
+  STUDENT:'student',
+  DETAILCLASS:'detailclass',
+
+  //main  
+  MORALITY:'morality',
+  FINALGRADE:'finalgrade',
+  GRADEBOOK:'',
+  DEMO:'demo',
+  MAIN: 'main',//main/component
+
+  //login
   LOGIN: 'login',
   REGISTER: 'register',
-  CATEGORIES: 'categories',
-  CART: 'cart',
-  BLOG: 'blog',
-  CONTACT: 'contact',
-  BLOGDETAIL: 'blogdetail',
-  PRODUCT_DETAIL: 'product-detail',
-  MAIN: '/:module',//product-detail/ :productId
-  BODY: 'home'
+
 }
 
-const Login = lazy(() => import(/* webpackChunkName: "Login" */ 'components/Login-Register'));
-const Register = lazy(() => import(/* webpackChunkName: "Register" */ 'screens/Register'));
-const Main = lazy(() => import(/* webpackChunkName: "Main" */ 'screens/Main'));
-const Categories = lazy(() => import(/* webpackChunkName: "Categories" */ 'components/Categories'));
-const ProductDetail = lazy(() => import(/* webpackChunkName: "Categories" */ 'components/ProductDetail'));
-const Body = lazy(() => import(/* webpackChunkName: "Categories" */'components/Body'));
-const Blog = lazy(() => import(/* webpackChunkName: "Categories" */'components/Blog'));
-const Contact = lazy(() => import(/* webpackChunkName: "Categories" */'components/Contact'));
-const BlogDetail = lazy(() => import(/* webpackChunkName: "Categories" */'components/BlogDetail'));
 
-const Cart = lazy(() => import(/* webpackChunkName: "Categories" */ 'components/CartFashion'))
+const Main = lazy(() => import(/* webpackChunkName: "Main" */ 'screens/Main'));
+
+
+const Login=lazy(()=>import(/* webpackChunkName: "Main" */'screens/Login'));
+const Student=lazy(()=>import(/* webpackChunkName: "Categories" */'screens/Student'))
+const Body = lazy(() => import(/* webpackChunkName: "Categories" */'components/Body'));
+const GradeBook=lazy(()=>import(/* webpackChunkName: "Categories" */'components/GradeBook'))
+const StudentMain=lazy(()=>import(/* webpackChunkName: "Categories" */'components/StudentMain'))
+const Morality=lazy(()=>import(/* webpackChunkName: "Categories" */'components/Morality'))
+const FinalGrade=lazy(()=>import(/* webpackChunkName: "Categories" */'components/FinalGrade'))
+const DetailClass=lazy(()=>import(/* webpackChunkName: "Categories" */'components/DetailClass'))
+const Demo = lazy(() => import(/* webpackChunkName: "Categories" */ 'components/demo1'))
+const AdminTeacher= lazy(() => import(/* webpackChunkName: "Categories" */ 'components/AdminTeacher'))
+const AdminStudent= lazy(() => import(/* webpackChunkName: "Categories" */ 'components/AdminStudent'))
+
 
 
 
@@ -38,54 +56,72 @@ export const RouteConfig = [
     path: Routes.MAIN,
     component: Main,
   },
+  {
+    path:Routes.LOGIN,
+    component:Login
+  }
+
 ];
+
+export const AdminRoute=[
+  {
+    path:Routes.DEMO,
+    component:Demo,
+    extra:true
+  },
+  {
+    path:Routes.ADMINTEACHER,
+    component:AdminTeacher,
+    extra:true
+  },
+  {
+    path:Routes.ADMINSTUDENT,
+    component:AdminStudent,
+    extra:true
+  }
+]
+
+export const StudentRoute=[
+  {
+    path: Routes.STUDENTMAIN,
+    component: StudentMain,
+    extra: true
+  },
+  {
+    path:Routes.DEMO,
+    component:Demo,
+    extra:true
+  },
+  {
+    path:Routes.DETAILCLASS,
+    component:DetailClass,
+    extra:true
+  }
+  
+]
+
+
 
 export const MainRoute = [
   {
-    path: Routes.BODY,
-    component: Body,
+    path: Routes.MORALITY,
+    component: Morality,
     extra: true
   },
   {
-    path: Routes.CATEGORIES,
-    component: Categories,
+    path: Routes.GRADEBOOK,
+    component: GradeBook,
     extra: true
   },
   {
-    path: Routes.PRODUCT_DETAIL,
-    component: ProductDetail,
-    extra: true
-
-  },
-  {
-    path: Routes.BLOG,
-    component: Blog,
+    path: Routes.DEMO,
+    component: Demo,
     extra: true
   },
   {
-    path: Routes.CONTACT,
-    component: Contact,
-    extra: true
-  },
-  {
-    path: Routes.BLOGDETAIL,
-    component: BlogDetail,
-    extra: true
-  },
-  {
-    path: Routes.LOGIN,
-    component: Login,
-    extra: true
-  },
-  {
-    path: Routes.CART,
-    component: Cart,
-    extra: true
-  },
-  {
-    path: Routes.PRODUCT_DETAIL,
-    component: ProductDetail,
-    extra: true
+    path:Routes.FINALGRADE,
+    component:FinalGrade,
+    extra:true
   }
-
+ 
 ]

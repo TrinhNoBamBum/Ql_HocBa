@@ -1,0 +1,31 @@
+.header-divContainer {
+    background: #fff;
+    border-bottom: 1px solid #f1f1f1;
+    margin:0;
+    border-top: 10px solid #f1f1f1;
+   
+}
+.headerContainer{
+    margin-top: 10px;
+
+    .formHeader{
+        .lable-select{
+            font-size: 17px;
+            color: #000;
+
+        }
+        select {
+            font-size: 13px;
+            margin-left: 10px;
+        }
+    }
+}
+
+.headerContainer-Person {
+    font-size: 20px;
+    span {
+        font-weight: bold;
+        font-size: 17px;
+    }
+}
+

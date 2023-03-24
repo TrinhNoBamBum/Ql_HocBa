@@ -1,0 +1,61 @@
+.StudentMain{
+    background: #f9f9f9;
+   padding-top:40px ;
+    
+    .Title-Student{
+        padding: 5px 15px;
+        width: 40%;
+     
+        text-align: center;
+        border-radius: 5px;
+        border: 1px solid #AADEC4;
+        background: #fff;
+        
+    }
+
+    .information-Student{
+        margin: 100px 0;
+        .table-infor{
+            box-shadow: 2px 2px 2px 2px #AADEC4;
+        }
+    }
+
+    .class-Student {
+        .listClass{
+            .btn-Class{
+                margin: 20px;
+                background-color: #70C2B4;
+                padding: 10px 25px;
+                border: none;
+                border-radius: 4px;
+
+                i{
+                    color: yellow;
+                    margin-right: 10px;
+                }
+                span{
+                    font-weight: bold;
+                }
+            }
+
+        }
+        
+    }
+    .iSshare {
+        .iShare-Checkbox{
+            div {
+                display: inline-block;
+                margin-right: 40px;
+                #vehicle1{
+                    margin-right: 10px;
+                }
+                #vehicle2 {
+                    margin-right: 10px;
+                }
+                
+            }
+
+        }
+
+    }
+}

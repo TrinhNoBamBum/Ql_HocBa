@@ -1,0 +1,40 @@
+.header-divContainer {
+    background: #fff;
+    border-bottom: 1px solid #f1f1f1;
+    margin:0;
+    border-top: 10px solid #f1f1f1;
+    padding: 20px;
+   
+}
+.btn-u {
+    padding: 15px 30px;
+    border: 1px solid #f1f1f1;
+    font-weight: 500;
+    border-radius: 15px;
+}
+
+.form-admin{
+    margin:10px 0  0 15px;
+    .input-search{
+       
+        padding: 5px 5px;
+        border-radius: 10px 0 0 10px;
+        border:1px solid #f1f1f1 ;
+        border-right:none;
+        width: 250px;
+
+    }
+    .input-search:focus{
+        outline: none;
+    }
+
+    .btn-search{
+       
+        padding: 5px 5px;
+        border-radius: 0 10px 10px 0;
+        background: #fff;
+        border:1px solid #f1f1f1 ;
+        border-left: none;
+
+    }
+}

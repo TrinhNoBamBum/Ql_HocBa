@@ -1,10 +1,10 @@
-export const countItemCart =(state =0, action:any)=>{
+export const ReCart =(state =[], action:any)=>{
     switch(action.type) {
-      case "COUNTITEM":
+      case "CART":
         return action.payload
       default:
         return state;  
     }
   }
   
-  export default countItemCart ;
+  export default ReCart ;
