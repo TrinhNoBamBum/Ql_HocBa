@@ -38,7 +38,7 @@ const Login = () => {
           <Link to='/demo'>
             <img src="assets/img/logoHighSchool.jpg" alt="" className='img-fluid logo' />
           </Link>
-          <h1>Sing in</h1>
+          <h1>Sign in</h1>
           <p>Sign in and start managing your candidates!</p>
 
           <div  >
